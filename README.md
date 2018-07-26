@@ -7,8 +7,17 @@
 Takes a list of options as an argument and returns a list of selected items from
 that list.
 
-Options are chosen by entering their corresponding number (including specifying
-ranges in the form 1..5 or 1-5), or using globbing to match option strings.
+Options are chosen by entering their corresponding number or name.
+
+Also supported is specifying ranges of numbers, in the form *x..y* or *x-y*
+(where *x* and *y* are item numbers from the list, eg) 1..5 or 1-5).
+
+Additionally you can use *..x* or *-x* to specify everything up to the number
+*x*, and *x..* or *x-* to specify everything from the number *x* until the last
+element.
+
+Finally one can use wildcard globbing to match option name strings. For instance
+**.py* would match all files with the extension *.py*.
 
 ## INSTALLATION
 
@@ -44,6 +53,6 @@ some_interesting_function(chosen)
 
 `chopt $(ls ~/src/chopt)`
 
-`chopt $(tail -n 10 /usr/share/dict/words)`
+`chopt $(shuf -n 100 /usr/share/dict/words)`
 
-`chopt options{1..12}`
+`chopt options{1..100}`
