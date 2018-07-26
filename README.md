@@ -4,25 +4,25 @@
 
 ![img](./chopt.gif "Choose Options")
 
-Takes a list of options as an argument and returns a list of selected items from
-that list.
+Takes a list of options and returns a list of chosen items from that list.
 
 Options are chosen by entering their corresponding number or name. Multiple
 options can be selected in one go. Choices should be separated by spaces.
 
 Also supported is specifying ranges of numbers, in the form *x..y* or *x-y*
-(where *x* and *y* are item numbers from the list, eg) 1..5 or 1-5).
+(where *x* and *y* are item numbers from the list).
 
-Additionally you can use *..x* or *-x* to specify everything up to the number
-*x*, and *x..* or *x-* to specify everything from the number *x* until the last
-element.
+Additionally *..x* or *-x* specify everything up to and including the *x*.
 
-Finally one can use wildcard globbing to match option name strings. For instance
-**.py* would match all files with the extension *.py*.
+*x..* or *x-* specify everything from *x* until the last element.
 
-Reserved words are *toggle*, *reset*, *accept* and *quit* (case insensitive). They can
-be used to carry out those respective actions. Typing just the first letter also
-carries out that action - ie) *t*, toggles all, *r*, resets, etc.
+One can use wildcard globbing to match option name strings. For instance **.py*
+would match all files with the extension *.py*.
+
+Reserved words are *toggle*, *reset*, *accept* and *quit* (case
+insensitive). They can be used to carry out those respective actions. Typing
+just the first letter also carries out that action - ie) *t*, toggles all, *r*,
+resets, etc.
 
 ## INSTALLATION
 
