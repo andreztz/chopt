@@ -19,6 +19,10 @@ element.
 Finally one can use wildcard globbing to match option name strings. For instance
 **.py* would match all files with the extension *.py*.
 
+Reserved words are *toggle*, *reset*, *accept* and *quit* (case insensitive). They can
+be used to carry out those respective actions. Typing just the first letter also
+carries out that action - ie) *t*, toggles all, *r*, resets, etc.
+
 ## INSTALLATION
 
 `pip install chopt`
