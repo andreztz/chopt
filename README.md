@@ -9,10 +9,10 @@ Takes a list of options and returns a list of chosen items from that list.
 Options are chosen by entering their corresponding number or name. Multiple
 options can be selected in one go. Choices should be separated by spaces.
 
-Also supported is specifying ranges of numbers, in the form *x..y* or *x-y*
-(where *x* and *y* are item numbers from the list).
+Also supported is specifying ranges of numbers, in the form *x..y* or *x-y* -
+where *x* and *y* are item numbers from the list.
 
-Additionally *..x* or *-x* specify everything up to and including the *x*.
+Additionally *..x* or *-x* specify everything up to and including *x*.
 
 *x..* or *x-* specify everything from *x* until the last element.
 
@@ -23,6 +23,11 @@ Reserved words are *toggle*, *reset*, *accept* and *quit* (case
 insensitive). They can be used to carry out those respective actions. Typing
 just the first letter also carries out that action - ie) *t*, toggles all, *r*,
 resets, etc.
+
+It's worth re-iterating that selection always happens in a toggling manner - ie)
+if some glob or range specification is re-matched a second time the items will
+be toggled, not retained. I'm receptive to changing this behavior if
+requested...
 
 ## INSTALLATION
 
