@@ -4,7 +4,6 @@ import re
 import readline
 
 
-<<<<<<< HEAD
 def prtheader():
     from textwrap import dedent, fill
     width = os.get_terminal_size()[0]
@@ -18,30 +17,14 @@ def prtheader():
 
 
 def menu(options, chosen):
-=======
-def menu(options, chosen):
-    from textwrap import dedent, fill
->>>>>>> 4a6e6a1db0438497bcfbcaab21347aded913e5d0
     from columns import prtcols
     '''
     Takes a list of options and selections as an argument and presents a
     checkbox menu with previously selected items still selected.
     '''
     optstrs = []
-<<<<<<< HEAD
     os.system('cls') if os.name == 'nt' else os.system('clear')
     prtheader()
-=======
-    width = os.get_terminal_size()[0]
-    os.system('cls') if os.name == 'nt' else os.system('clear')
-    msg = '''
-          Enter option names (wildcards accepted), or numbers (ranges accepted),
-          to toggle selections. t toggles all, r resets, a accepts choices & q
-          quits.
-          '''
-    msg = dedent(msg).strip()
-    print("\n" + fill(msg, width=width) + "\n")
->>>>>>> 4a6e6a1db0438497bcfbcaab21347aded913e5d0
     for option in options:
         index = options.index(option)
         # print("{0:>1} {1:>2}) {2:}".format(chosen[index], index+1,  option))
@@ -202,12 +185,8 @@ def chopt(options):
         elif re.match('q(uit)?$', inputs[0], re.IGNORECASE):
             return
         else:
-<<<<<<< HEAD
             inputs = get_ranges(inputs, options)
             matched, invalid, failed = get_matches(inputs, options)
-=======
-            matched, invalid, failed = get_matches(get_ranges(inputs), options)
->>>>>>> 4a6e6a1db0438497bcfbcaab21347aded913e5d0
             chosen = mark(matched, chosen)
 
         markall = chkmrk(options, chosen)
