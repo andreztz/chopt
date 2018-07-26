@@ -1,3 +1,6 @@
+import os
+
+
 def getargs():
     from argparse import ArgumentParser
     parser = ArgumentParser(description='Choose Options from a list.')
@@ -7,11 +10,15 @@ def getargs():
 
 def main():
     from .chopt import chopt
+    from columns import prtcols
     args = getargs()
     options = args.options
     chosen = chopt(options)
+    os.system('cls') if os.name == 'nt' else os.system('clear')
     if chosen:
-        print("\nChosen items: " + ", ".join(chosen) + "\n")
+        print("\nChosen items:\n")
+        prtcols(chosen, 6)
+        print()
     else:
         print("\nNothing to see here.\n")
 
