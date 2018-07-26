@@ -7,7 +7,8 @@
 Takes a list of options as an argument and returns a list of selected items from
 that list.
 
-Options are chosen by entering their corresponding number or name.
+Options are chosen by entering their corresponding number or name. Multiple
+options can be selected in one go. Choices should be separated by spaces.
 
 Also supported is specifying ranges of numbers, in the form *x..y* or *x-y*
 (where *x* and *y* are item numbers from the list, eg) 1..5 or 1-5).
