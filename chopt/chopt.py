@@ -182,13 +182,13 @@ def chopt(options):
             else:
                 for o in options:
                     chosen[options.index(o)] = " + "
-        elif re.match('r(eset)?$', inputs[0], re.IGNORECASE):
+        elif re.match('^r(eset)?$', inputs[0], re.IGNORECASE):
             for o in options:
                 chosen[options.index(o)] = "   "
-        elif re.match('a(ccept)?$', inputs[0], re.IGNORECASE):
+        elif re.match('^a(ccept)?$', inputs[0], re.IGNORECASE):
             # list comprehension that returns all chosen options
             return [o for o in options if chosen[options.index(o)] == " + "]
-        elif re.match('q(uit)?$', inputs[0], re.IGNORECASE):
+        elif re.match('^q(uit)?$', inputs[0], re.IGNORECASE):
             return
         else:
             inputs = get_ranges(inputs, options)
