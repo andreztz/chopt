@@ -16,8 +16,10 @@ Additionally *..x* or *-x* specify everything up to and including *x*.
 
 *x..* or *x-* specify everything from *x* until the last element.
 
-One can use wildcard globbing to match option name strings. For instance **.py*
-would match all files with the extension *.py*.
+One can use wildcards to match option name strings. For instance **.py* would
+match all files with the extension *.py*.
+
+Finally, you can use standard regex to match choices too.
 
 Reserved words are *toggle*, *reset*, *accept* and *quit* (case
 insensitive). They can be used to carry out those respective actions. Typing
