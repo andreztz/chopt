@@ -113,9 +113,15 @@ def get_matches(inputs, options):
             number = index + 1
             number = str(number)
             regex = fnmatch.translate(str(i))  # convert globs to regex
-            if re.match(regex, j) or re.match(regex, number):
-                matches.append(index)
-            else:
+            # try/except block needed as regex parsing shits the bed and crashes
+            # the program if invalid regex is entered.
+            try:
+                if (re.match(regex, j) or re.match(regex, number)
+                        or re.match(i, j) or re.match(i, number)):
+                    matches.append(index)
+                else:
+                    count += 1
+            except:
                 count += 1
 
         # if we failed to match an input against any of the options.
