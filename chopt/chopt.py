@@ -116,8 +116,7 @@ def get_matches(inputs, options):
             # try/except block needed as regex parsing shits the bed and crashes
             # the program if invalid regex is entered.
             try:
-                if (re.match(regex, j) or re.match(regex, number)
-                        or re.match(i, j) or re.match(i, number)):
+                if re.match(regex, j) or re.match(regex, number):
                     matches.append(index)
                 else:
                     count += 1
